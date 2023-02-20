@@ -1,0 +1,237 @@
+/* variables */
+:root {
+    --green-color: #41BECD;
+    --voilet-color: #523191;
+    --pink-color: #E07777;
+}
+
+/* global rules */
+* {
+    --webkit-box-sizing: border-box;
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+}
+
+body {
+    font-family: 'Marhey', cursive, sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-size: 35px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+/* content rules */
+.container {
+    position: relative;
+    background-image: radial-gradient(white 50%, rgb(227, 198, 154));
+    height: 100vh;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.decoration {
+    background-image: url(../images/decoration.svg);
+    background-repeat: repeat-x;
+    height: 20vh;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    animation: fade 3s infinite alternate-reverse ease-in-out;
+}
+
+.shapes .fanoos {
+    width: 200px;
+    position: absolute;
+    top: -20vh;
+    transform-origin: top;
+}
+
+.shapes .fanoos img {
+    animation: spin 2.5s infinite alternate ease-in-out;
+    transform-origin: top;
+}
+
+.shapes .fanoos:nth-child(1) {
+    transform: translate(70%, 0);
+}
+
+.shapes .fanoos:nth-child(2) {
+    transform: translate(120%, 0) scale(0.8);
+}
+
+.shapes .fanoos:nth-child(4) {
+    transform: translate(-270%, 0);
+}
+
+.shapes .fanoos:nth-child(3) {
+    transform: translate(-220%, 0) scale(0.9);
+}
+
+.shapes .fanoos:nth-child(1) img {
+    animation-delay: 0.55s;
+}
+
+.shapes .fanoos:nth-child(2) img {
+    animation-delay: 0.3s;
+    animation-direction: alternate-reverse;
+}
+
+.shapes .fanoos:nth-child(3) img {
+    animation-delay: 0.1s;
+}
+
+.shapes .fanoos:nth-child(4) img {
+    animation-delay: 1.5s;
+    animation-direction: alternate-reverse;
+}
+
+
+.ramadan {
+    width: 500px;
+    max-width: 100%;
+    padding: 0 40px;
+    top: 20vh;
+    position: relative;
+}
+
+.dataText {
+    margin-top: 70px;
+}
+
+.remainingDays {
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--green-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+    background-color: var(--voilet-color);
+    padding: 0 20px;
+}
+
+footer p {
+    font-size: 12px;
+    color: white;
+    line-height: 1.5;
+    margin: 7px 0;
+}
+
+footer p a {
+    color: var(--green-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#ramadanWord {
+    color: var(--pink-color);
+    font-weight: 600;
+}
+
+/* media quary */
+@media (max-width:1000px) {
+    .shapes .fanoos {
+        display: inline-block;
+        width: calc(200px / 1.8);
+        position: relative;
+        top: -20vh;
+        transform-origin: top;
+    }
+
+    .shapes .fanoos:nth-child(1),
+    .shapes .fanoos:nth-child(2),
+    .shapes .fanoos:nth-child(3),
+    .shapes .fanoos:nth-child(4) {
+        transform: none;
+    }
+
+    .ramadan {
+        top: 25vh;
+        position: absolute;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .dataText {
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width:500px) {
+    .shapes .fanoos {
+        width: calc(200px / 2.5);
+    }
+
+    p {
+        font-size: 28px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:330px) {
+    .shapes {
+        display: none;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+}
+
+/* animations keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* @keyframes colors {
+    0% {
+        fill: var(--green-color);
+    }
+
+    50% {
+        fill: var(--pink-color);
+    }
+
+    100% {
+        fill: var(--voilet-color);
+    }
+} */
