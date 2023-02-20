@@ -117,6 +117,22 @@ p {
     color: var(--green-color);
 }
 
+.today {
+    position: fixed;
+    bottom: 5vh;
+    padding: 20p 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.today p {
+    font-size: 18px;
+}
+
+.today p span {
+    color: var(--voilet-color)
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -188,6 +204,10 @@ footer p a {
 
     footer p {
         font-size: 10px;
+    }
+
+    .today p {
+        font-size: 15px;
     }
 }
 

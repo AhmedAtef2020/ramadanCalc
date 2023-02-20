@@ -26,3 +26,6 @@ if (diff >= 0) {
 //before ramadan
 ramadanCase.textContent = "على";
 remainingDaysEle.textContent = Math.abs(diff).toLocaleString("ar-sa");
+
+// today date placment
+document.getElementById("today__date").textContent = todayHijryDate.format("iYYYY/iM/iD");
