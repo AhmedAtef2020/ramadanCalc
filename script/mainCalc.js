@@ -1,14 +1,13 @@
 // global variables
 const remainingDaysEle = document.querySelector(".remainingDays");
-const todatDate = moment();
-const todayHijryFormat = todatDate.format("iYYYY/iM/iD");
+const todaytDate = moment();
+const todayHijryFormat = todaytDate.format("iYYYY/iM/iD");
 const todayHijryDate = moment(todayHijryFormat, "iYYYY/iM/iD");
-const currentHijriYear = parseInt(todatDate.format("iYYYY"));
+const currentHijriYear = parseInt(todayHijryDate.format("iYYYY"));
 let ramadanStart = moment(`${currentHijriYear}/9/1`, "iYYYY/iM/iD");
-let inRamadan = ramadanStart.daysInMonth();
+let inRamadan = ramadanStart.daysInMonth() - 1;
 let diff = todayHijryDate.diff(ramadanStart, "days");
 let ramadanCase = document.getElementById("ramadanCase");
-
 
 // if statment 
 if (diff >= 0) {
@@ -21,10 +20,14 @@ if (diff >= 0) {
         const nextHijriYear = currentHijriYear + 1;
         ramadanStart = moment(`${nextHijriYear}/9/1`, "iYYYY/iM/iD");
         diff = todayHijryDate.diff(ramadanStart, "days");
+        console.log(diff);
+
     }
+} else {
+    //before ramadan
+    ramadanCase.textContent = "على";
 }
-//before ramadan
-ramadanCase.textContent = "على";
+
 remainingDaysEle.textContent = Math.abs(diff).toLocaleString("ar-sa");
 
 // today date placment
